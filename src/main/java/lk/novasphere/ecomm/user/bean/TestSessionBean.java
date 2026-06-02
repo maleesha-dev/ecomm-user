@@ -2,22 +2,34 @@ package lk.novasphere.ecomm.user.bean;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import jakarta.ejb.Stateless;
+import jakarta.ejb.PostActivate;
+import jakarta.ejb.PrePassivate;
+import jakarta.ejb.Stateful;
 import lk.novasphere.ecomm.user.remote.TestRemote;
 
-@Stateless
+@Stateful
 public class TestSessionBean implements TestRemote {
 
     int i;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         System.out.println("TestSessionBean : init");
     }
 
     @PreDestroy
-    public void destroy(){
+    public void destroy() {
         System.out.println("TestSessionBean : destroy");
+    }
+
+    @PostActivate
+    public void postActivate(){
+        System.out.println("TestSessionBean : postActivate");
+    }
+
+    @PrePassivate
+    public void prePassivate(){
+        System.out.println("TestSessionBean : prePassivate");
     }
 
 
@@ -30,11 +42,11 @@ public class TestSessionBean implements TestRemote {
 
         i++;
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
 
         return ("TestSessionBean : test" + i);
     }
