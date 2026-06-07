@@ -5,9 +5,9 @@ import jakarta.annotation.PreDestroy;
 import jakarta.ejb.*;
 import lk.novasphere.ecomm.user.remote.TestRemote;
 
-@Stateful(mappedName = "TestSessionBean")
+@Stateful(mappedName = "TestNewSessionBean")
 //@Startup
-public class TestSessionBean implements TestRemote {
+public class TestNewSessionBean implements TestRemote {
 
     int i;
 
