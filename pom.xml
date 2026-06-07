@@ -23,11 +23,10 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
-            <version>2.1.1</version>
+            <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -40,7 +39,14 @@
                 <version>3.2.1</version>
                 <configuration>
                     <generateClient>true</generateClient>
-                    <!--    ***Bean  /  ***CMP  /  ***Session  -> Exclude   -->
+                    <!--  ***Bean / ***CMP / ***Session -> Exclude     -->
+                    <!--                    <clientExcludes>-->
+                    <!--                        <clientExclude>lk/jiat/ecomm/user/bean/*</clientExclude>-->
+                    <!--                    </clientExcludes>-->
+
+                    <!--                    <clientIncludes>-->
+                    <!--                        <clientExclude>lk/jiat/ecomm/user/*</clientExclude>-->
+                    <!--                    </clientIncludes>-->
                 </configuration>
             </plugin>
         </plugins>
