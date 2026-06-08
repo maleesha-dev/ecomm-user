@@ -13,35 +13,35 @@ public class TestNewSessionBean implements TestRemote {
 
     @PostConstruct
     public void init() {
-        System.out.println("TestSessionBean : init");
+        System.out.println("TestNewSessionBean : init");
     }
 
     @PreDestroy
     public void destroy() {
-        System.out.println("TestSessionBean : destroy");
+        System.out.println("TestNewSessionBean : destroy");
     }
 
     @PostActivate
     public void postActivate() {
-        System.out.println("TestSessionBean : postActivate");
+        System.out.println("TestNewSessionBean : postActivate");
     }
 
     @PrePassivate
     public void prePassivate() {
-        System.out.println("TestSessionBean : prePassivate");
+        System.out.println("TestNewSessionBean : prePassivate");
     }
 
     @Remove
     @Override
-    public void remove(){
-        System.out.println("TestSessionBean : removed...");
+    public void remove() {
+        System.out.println("TestNewSessionBean : removed...");
     }
 
     @Override
     @Lock(LockType.READ)
     public String test() {
         i++;
-        System.out.println("TestSessionBean : test..");
+        System.out.println("TestNewSessionBean : test..");
 
         try {
             Thread.sleep(100);
@@ -49,6 +49,6 @@ public class TestNewSessionBean implements TestRemote {
             throw new RuntimeException(e);
         }
 
-        return "TestSessionBean : test"+i;
+        return "TestNewSessionBean : test" + i;
     }
 }
